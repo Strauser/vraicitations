@@ -10,3 +10,5 @@ GET         /api/v1/test            controllers.SimpleController.index
 GET         /webjars/*file          controllers.Assets.at(path="/public", file)
 GET         /scripts/*file          controllers.Assets.at(path="/public/scripts", file)
 GET         /*file                  controllers.Assets.at(path="/public/html", file)
+GET         /                       controllers.Assets.at(path="/public/html/", file="index.html")
+
