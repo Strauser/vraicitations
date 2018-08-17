@@ -4,7 +4,7 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET         /api/v1/test            controllers.SimpleController.index
+GET         /api/v1/quote            controllers.QuotesController.getQuote
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /webjars/*file          controllers.Assets.at(path="/public", file)

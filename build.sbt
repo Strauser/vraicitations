@@ -15,12 +15,15 @@ lazy val vraicitations = (project in file(".")).enablePlugins(PlayScala)
     guice,
     filters,
 
-    "org.webjars"     % "bootstrap"      % "3.1.1-2",
-    "org.webjars"     % "jquery"         % "1.11.1",
-    "org.webjars"     % "popper.js"      % "1.14.3",
-    "org.webjars"     % "vue"            % "2.5.16",
+    "org.flywaydb"  %% "flyway-play"          % "5.0.0",
+    "mysql"          % "mysql-connector-java" % "5.1.12",
 
-    "org.scalatest" %% "scalatest"    % "3.0.5" % "test"
+    "org.webjars"    % "bootstrap"   % "3.1.1-2",
+    "org.webjars"    % "jquery"      % "1.11.1",
+    "org.webjars"    % "popper.js"   % "1.14.3",
+    "org.webjars"    % "vue"         % "2.5.16",
+
+    "org.scalatest" %% "scalatest"   % "3.0.5" % "test"
   )
 )
 
