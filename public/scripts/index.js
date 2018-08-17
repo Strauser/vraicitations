@@ -1,13 +1,13 @@
-fetch('https://jsonplaceholder.typicode.com/todos', {
-        method: 'POST',
-        body:JSON.stringify({title:"a new todo"})
-}).then((res) => res.json())
-.then((data) =>  console.log(data))
-.catch((err)=>console.error(err))
-
 var app = new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue!'
+    message : ""
   }
 })
+
+fetch('/api/v1/test', {
+        method: 'GET',
+        body:JSON.stringify()
+}).then((res) => res.json())
+.then((data) =>  app.message = data.quote)
+.catch((err)=>console.error(err))
