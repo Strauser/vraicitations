@@ -14,9 +14,10 @@ lazy val vraicitations = (project in file(".")).enablePlugins(PlayScala)
   libraryDependencies ++= Seq(
     guice,
 
-    "org.webjars"     % "bootstrap"     % "3.1.1-2",
+    "org.webjars"     % "bootstrap"      % "3.1.1-2",
     "org.webjars"     % "jquery"         % "3.3.1-1",
     "org.webjars"     % "popper.js"      % "1.14.3",
+    "org.webjars"     % "vue"            % "2.5.16",
 
     "org.scalatest" %% "scalatest"    % "3.0.5" % "test"
   )
