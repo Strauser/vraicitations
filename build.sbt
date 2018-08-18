@@ -1,5 +1,3 @@
-import sun.security.tools.PathList
-
 name := "vraicitations"
 
 organization := "fr.strude"
