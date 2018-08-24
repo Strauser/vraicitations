@@ -1,11 +1,18 @@
-CREATE TABLE authors (
-    author_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    name VARCHAR(255)
+use truequotes;
+
+CREATE TABLE IF NOT EXISTS authors (
+    author_id INT AUTO_INCREMENT NOT NULL,
+    name VARCHAR(255),
+
+    PRIMARY KEY (author_id)
 );
 
-CREATE TABLE quotes (
-    quote_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+CREATE TABLE IF NOT EXISTS quotes (
+    quote_id INT AUTO_INCREMENT NOT NULL,
     quote VARCHAR(2000),
     truequote VARCHAR(2000),
-    author INT FOREIGN KEY REFERENCES authors(author_id)
+    author INT NOT NULL,
+
+    PRIMARY KEY (quote_id),
+    FOREIGN KEY (author) REFERENCES authors(author_id) ON DELETE CASCADE
 );
