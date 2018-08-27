@@ -6,8 +6,8 @@
 # An example controller showing a sample home page
 GET         /api/v1/quote            controllers.QuotesController.getQuote
 
-# Map static resources from the /public folder to the /assets URL path
 GET         /webjars/*file          controllers.Assets.at(path="/public", file)
+GET         /assets/*file           controllers.Assets.at(path="/public", file)
 GET         /scripts/*file          controllers.Assets.at(path="/public/scripts", file)
 GET         /*file                  controllers.Assets.at(path="/public/html", file)
 GET         /                       controllers.Assets.at(path="/public/html/", file="index.html")

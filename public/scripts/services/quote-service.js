@@ -1,10 +1,10 @@
 class QuoteService {
 
     getQuote() {
-        fetch('/api/v1/quote');
+        return this.getApi('/api/v1/quote');
     }
 
-    fetch(url) {
+    getApi(url) {
         return fetch(url, {
             method: 'GET',
             body:JSON.stringify()
