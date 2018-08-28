@@ -30,8 +30,6 @@ class QuoteDao @Inject()(db: Database) {
     }
   ))
 
-
-
   def rowsToQuotes(rs: ResultSet, quotes: List[Quote]): List[Quote] = {
     val quote = Quote.fromRow(rs)
 
