@@ -5,7 +5,7 @@ import play.api.db.{Database, Databases}
 
 trait DbUtils extends WordSpec with BeforeAndAfterAll {
 
-  var database: Database = _
+  private var database: Database = _
 
   override def beforeAll() {
     database = Databases(

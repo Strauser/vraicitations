@@ -26,16 +26,39 @@ class QuoteDao @Inject()(db: Database) {
       ).executeQuery()
 
       rs.first()
-      rowsToQuotes(rs, Nil)
+      rowsToQuotes(rs)
     }
   ))
 
-  def rowsToQuotes(rs: ResultSet, quotes: List[Quote]): List[Quote] = {
-    val quote = Quote.fromRow(rs)
+  def getRandomQuote: Future[Quote] = Future(db.withConnection(
+    connection => {
+      val rs = connection.prepareStatement(
+        "SELECT" +
+            " quotes.quote_id," +
+            " quotes.quote," +
+            " authors.author_id," +
+            " authors.name" +
+          " FROM quotes" +
+            " INNER JOIN authors ON quotes.author = authors.author_id" +
+          " ORDER BY RAND()" +
+          " LIMIT 1"
+      ).executeQuery()
 
-    if(rs.isLast) return (quote :: quotes).reverse
-    rs.next()
-    rowsToQuotes(rs, quote :: quotes)
+      rs.first()
+      Quote.fromRow(rs)
+    }
+  ))
+
+  def rowsToQuotes(rs: ResultSet): List[Quote] = {
+    def rowsToQuotes(rs: ResultSet, quotes: List[Quote]): List[Quote] = {
+      val quote = Quote.fromRow(rs)
+
+      if(rs.isLast) return (quote :: quotes).reverse
+      rs.next()
+      rowsToQuotes(rs, quote :: quotes)
+    }
+    rowsToQuotes(rs, Nil)
   }
+
 
 }
