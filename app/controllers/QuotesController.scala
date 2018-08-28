@@ -10,7 +10,7 @@ import play.api.mvc.{AbstractController, AnyContent, ControllerComponents, Reque
 class QuotesController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
 
   def getQuote() = Action { implicit request: Request[AnyContent] =>
-    Ok(Json.toJson(Quote("J'aime le dab", Author("Roger"))))
+    Ok(Json.toJson(Quote(1, "J'aime le dab", Author(1, "Roger"))))
   }
 
 }

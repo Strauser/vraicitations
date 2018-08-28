@@ -8,7 +8,10 @@ sbtVersion := "1.0.4"
 
 lazy val vraicitations = (project in file("."))
   .enablePlugins(PlayScala)
+  .configs(IntegrationTest)
   .settings(
+
+    Defaults.itSettings,
 
     libraryDependencies ++= Seq(
       guice,
@@ -23,11 +26,6 @@ lazy val vraicitations = (project in file("."))
       "org.webjars"    % "popper.js"   % "1.14.3",
       "org.webjars"    % "vue"         % "2.5.16",
 
-      "com.typesafe.play" %% "play-test" % play.core.PlayVersion.current % "test"
-        excludeAll ExclusionRule(organization = "org.specs2"),
-
-      "org.scalikejdbc" %% "scalikejdbc" % "3.2.1" % "test",
-      "org.scalikejdbc" %% "scalikejdbc-config" % "3.2.1" % "test",
       "org.scalatest" %% "scalatest"   % "3.0.5" % "test"
     )
   )
