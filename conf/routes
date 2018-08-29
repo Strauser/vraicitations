@@ -9,6 +9,7 @@ GET         /api/v1/quote            controllers.QuotesController.getQuote
 GET         /webjars/*file          controllers.Assets.at(path="/public", file)
 GET         /assets/*file           controllers.Assets.at(path="/public", file)
 GET         /scripts/*file          controllers.Assets.at(path="/public/scripts", file)
+GET         /css/*file              controllers.Assets.at(path="/public/css", file)
 GET         /*file                  controllers.Assets.at(path="/public/html", file)
 GET         /                       controllers.Assets.at(path="/public/html/", file="index.html")
 
