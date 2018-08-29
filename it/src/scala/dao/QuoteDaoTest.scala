@@ -14,7 +14,7 @@ class QuoteDaoTest extends WordSpec with Matchers with DbUtils {
       db =>
         val dao = new QuoteDao(db)
         val quotes = Await.result(dao.getAllQuotes, Duration("1 minute"))
-        (quotes.size >= 1) should be(true)
+        quotes.lengthCompare(1) >= 0 should be(true)
     }
   }
 

@@ -3,7 +3,6 @@ package controllers
 import javax.inject.{Inject, Singleton}
 
 import dao.QuoteDao
-import models.{Author, Quote}
 import play.api.libs.json.Json
 import play.api.mvc.{AbstractController, AnyContent, ControllerComponents, Request}
 

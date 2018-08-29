@@ -26,7 +26,7 @@ lazy val vraicitations = (project in file("."))
       "org.webjars"    % "popper.js"   % "1.14.3",
       "org.webjars"    % "vue"         % "2.5.16",
 
-      "org.scalatest" %% "scalatest"   % "3.0.5" % "test"
+      "org.scalatest" %% "scalatest"   % "3.0.5" % "it, test"
     )
   )
 
