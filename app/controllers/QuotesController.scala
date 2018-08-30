@@ -14,7 +14,7 @@ class QuotesController @Inject()(cc: ControllerComponents, quoteDao: QuoteDao) e
   def getQuote() = Action.async { implicit request: Request[AnyContent] =>
     quoteDao.getRandomQuote.map {
       quote =>
-        Ok(Json.toJson(quote))
+        Ok(Json.toJson(quote.getfullQuote))
     }
   }
 
