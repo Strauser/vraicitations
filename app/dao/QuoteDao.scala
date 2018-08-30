@@ -1,13 +1,13 @@
 package dao
 
 import java.sql.ResultSet
-import javax.inject.{Inject, Singleton}
 
-import models.{Author, Quote}
+import javax.inject.{Inject, Singleton}
+import models.Quote
 import play.api.db._
 
-import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.Future
 
 @Singleton
 class QuoteDao @Inject()(db: Database) {
@@ -16,13 +16,18 @@ class QuoteDao @Inject()(db: Database) {
   def getAllQuotes: Future[List[Quote]] = Future(db.withConnection(
     connection => {
       val rs = connection.prepareStatement(
-        "SELECT " +
-            "quotes.quote_id, " +
-            "quotes.quote, " +
-            "authors.author_id, " +
-            "authors.name " +
-          "FROM quotes " +
-            "INNER JOIN authors ON quotes.author = authors.author_id"
+        "SELECT" +
+            " quotes.quote_id," +
+            " quotes.quote," +
+            " authors.author_id," +
+            " authors.name," +
+            " contents.content_id," +
+            " contents.content," +
+            " contents.type," +
+            " contents.person," +
+            " contents.tense" +
+          " FROM quotes" +
+            " INNER JOIN authors ON quotes.author = authors.author_id"
       ).executeQuery()
 
       rs.first()
@@ -37,9 +42,15 @@ class QuoteDao @Inject()(db: Database) {
             " quotes.quote_id," +
             " quotes.quote," +
             " authors.author_id," +
-            " authors.name" +
+            " authors.name," +
+            " contents.content_id," +
+            " contents.content," +
+            " contents.type," +
+            " contents.person," +
+            " contents.tense" +
           " FROM quotes" +
-            " INNER JOIN authors ON quotes.author = authors.author_id" +
+            " INNER JOIN authors  ON quotes.author  = authors.author_id" +
+            " INNER JOIN contents ON quotes.content = contents.content_id" +
           " ORDER BY RAND()" +
           " LIMIT 1"
       ).executeQuery()
