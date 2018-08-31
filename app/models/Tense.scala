@@ -2,7 +2,10 @@ package models
 
 import play.api.libs.json.{Json, OFormat, OWrites, Reads}
 
-case class Tense(id: Int, name: String) {}
+case class Tense(
+  id: Int,
+  name: String
+) {}
 
 object Tense {
 

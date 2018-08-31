@@ -25,6 +25,5 @@ CREATE TABLE IF NOT EXISTS quotes (
     author INT NOT NULL,
 
     PRIMARY KEY (quote_id),
-    FOREIGN KEY (author) REFERENCES authors(author_id) ON DELETE CASCADE,
-    FOREIGN KEY (content) REFERENCES contents(content_id)
+    FOREIGN KEY (author) REFERENCES authors(author_id) ON DELETE CASCADE
 );

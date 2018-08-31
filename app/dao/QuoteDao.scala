@@ -19,13 +19,16 @@ class QuoteDao @Inject()(db: Database) {
         "SELECT" +
             " quotes.quote_id," +
             " quotes.quote," +
+            " quotes.content_type as quote_type," +
+            " quotes.person as quote_person," +
+            " quotes.tense as quote_tense," +
             " authors.author_id," +
             " authors.name," +
-            " contents.content_id," +
-            " contents.content," +
-            " contents.type," +
-            " contents.person," +
-            " contents.tense" +
+//            " contents.content_id," +
+//            " contents.content," +
+//            " contents.type as content_type," +
+//            " contents.person as content_person," +
+//            " contents.tense as content_tense" +
           " FROM quotes" +
             " INNER JOIN authors ON quotes.author = authors.author_id"
       ).executeQuery()
@@ -37,23 +40,30 @@ class QuoteDao @Inject()(db: Database) {
 
   def getRandomQuote: Future[Quote] = Future(db.withConnection(
     connection => {
-      val rs = connection.prepareStatement(
-        "SELECT" +
-            " quotes.quote_id," +
-            " quotes.quote," +
-            " authors.author_id," +
-            " authors.name," +
-            " contents.content_id," +
-            " contents.content," +
-            " contents.type," +
-            " contents.person," +
-            " contents.tense" +
-          " FROM quotes" +
-            " INNER JOIN authors  ON quotes.author  = authors.author_id" +
-            " INNER JOIN contents ON quotes.content = contents.content_id" +
-          " ORDER BY RAND()" +
-          " LIMIT 1"
-      ).executeQuery()
+
+      val query = "SELECT" +
+          " quotes.quote_id," +
+          " quotes.quote," +
+          " quotes.type as quote_type," +
+          " quotes.person as quote_person," +
+          " quotes.tense as quote_tense," +
+          " authors.author_id," +
+          " authors.name," +
+          " contents.content_id," +
+          " contents.content," +
+          " contents.type as content_type," +
+          " contents.person as content_person," +
+          " contents.tense as content_tense" +
+        " FROM quotes" +
+          " INNER JOIN authors  ON quotes.author = authors.author_id" +
+          " INNER JOIN contents ON quotes.type   = contents.type" +
+            " AND (quotes.person IS NULL OR quotes.person = contents.person)" +
+            " AND (quotes.tense IS NULL  OR quotes.tense  = contents.tense)" +
+        " ORDER BY RAND()" +
+        " LIMIT 1"
+
+      println(query)
+      val rs = connection.prepareStatement(query).executeQuery()
 
       rs.first()
       Quote.fromRow(rs)
@@ -70,6 +80,5 @@ class QuoteDao @Inject()(db: Database) {
     }
     rowsToQuotes(rs, Nil)
   }
-
 
 }

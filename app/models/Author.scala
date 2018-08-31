@@ -7,11 +7,7 @@ import play.api.libs.json.{Json, OFormat, OWrites, Reads}
 case class Author(
    authorId: Int,
    name: String
-) {
-
-
-
-}
+) {}
 
 object Author {
   implicit val reader: Reads[Author] = Json.reads[Author]
