@@ -2,7 +2,7 @@ package models
 
 import play.api.libs.json.{Json, OFormat, OWrites, Reads}
 
-case class ContentType(name: String) {}
+case class ContentType(id: Int, name: String) {}
 
 object ContentType {
 
@@ -10,15 +10,15 @@ object ContentType {
   implicit val writer: OWrites[ContentType] = Json.writes[ContentType]
   implicit val format: OFormat[ContentType] = Json.format[ContentType]
 
-  val sentence = ContentType("sentence")
-  val time = ContentType("time")
-  val space = ContentType("space")
-  val verb = ContentType("verb")
+  val SENTENCE = ContentType(1, "Phrase")
+  val TIME     = ContentType(2, "Temps")
+  val SPACE    = ContentType(3, "Espace")
+  val VERB     = ContentType(4, "Verbe")
 
-  val contentTypes: List[ContentType] = List(sentence, time, space, verb)
+  val contentTypes: List[ContentType] = List(SENTENCE, TIME, SPACE, VERB)
 
-  def parse(name: String): ContentType = {
-    contentTypes.filter((contentType: ContentType) => contentType.name.equals(name)).head
+  def parse(id: Int): ContentType = {
+    contentTypes.filter((contentType: ContentType) => contentType.id.equals(id)).head
   }
 }
 
