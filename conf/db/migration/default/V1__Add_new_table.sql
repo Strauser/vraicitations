@@ -22,8 +22,6 @@ CREATE TABLE IF NOT EXISTS quotes (
     person INT,
     tense INT,
     truequote VARCHAR(2000),
-    author INT NOT NULL,
 
-    PRIMARY KEY (quote_id),
-    FOREIGN KEY (author) REFERENCES authors(author_id) ON DELETE CASCADE
+    PRIMARY KEY (quote_id)
 );

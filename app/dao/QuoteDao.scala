@@ -17,20 +17,30 @@ class QuoteDao @Inject()(db: Database) {
     connection => {
       val rs = connection.prepareStatement(
         "SELECT" +
-            " quotes.quote_id," +
-            " quotes.quote," +
-            " quotes.content_type as quote_type," +
-            " quotes.person as quote_person," +
-            " quotes.tense as quote_tense," +
-            " authors.author_id," +
-            " authors.name," +
-//            " contents.content_id," +
-//            " contents.content," +
-//            " contents.type as content_type," +
-//            " contents.person as content_person," +
-//            " contents.tense as content_tense" +
-          " FROM quotes" +
-            " INNER JOIN authors ON quotes.author = authors.author_id"
+          " quotes.quote_id," +
+          " quotes.quote," +
+          " quotes.type as quote_type," +
+          " quotes.person as quote_person," +
+          " quotes.tense as quote_tense," +
+          " '' as author_id," +
+          " '' as name," +
+          " content.content_id," +
+          " content.content," +
+          " content.type as content_type," +
+          " content.person as content_person," +
+          " content.tense as content_tense" +
+        " FROM quotes" +
+          " INNER JOIN (" +
+            " SELECT content_id," +
+            " content," +
+            " type," +
+            " person," +
+            " tense" +
+            " FROM contents" +
+          ") as content ON " +
+            " quotes.type   = content.type" +
+            " AND (quotes.person IS NULL OR quotes.person = content.person)" +
+            " AND (quotes.tense IS NULL  OR quotes.tense  = content.tense)"
       ).executeQuery()
 
       rs.first()
@@ -47,22 +57,37 @@ class QuoteDao @Inject()(db: Database) {
           " quotes.type as quote_type," +
           " quotes.person as quote_person," +
           " quotes.tense as quote_tense," +
-          " authors.author_id," +
-          " authors.name," +
-          " contents.content_id," +
-          " contents.content," +
-          " contents.type as content_type," +
-          " contents.person as content_person," +
-          " contents.tense as content_tense" +
+          " author.author_id," +
+          " author.name," +
+          " content.content_id," +
+          " content.content," +
+          " content.type as content_type," +
+          " content.person as content_person," +
+          " content.tense as content_tense" +
         " FROM quotes" +
-          " INNER JOIN authors  ON quotes.author = authors.author_id" +
-          " INNER JOIN contents ON quotes.type   = contents.type" +
-            " AND (quotes.person IS NULL OR quotes.person = contents.person)" +
-            " AND (quotes.tense IS NULL  OR quotes.tense  = contents.tense)" +
+          " INNER JOIN (" +
+            " SELECT author_id," +
+              " name" +
+            " FROM authors" +
+            " ORDER BY RAND()" +
+            " LIMIT 1" +
+            ") as author" +
+          " INNER JOIN (" +
+            " SELECT content_id," +
+              " content," +
+              " type," +
+              " person," +
+              " tense" +
+            " FROM contents" +
+            " ORDER BY RAND()" +
+            " LIMIT 1" +
+          ") as content ON " +
+            " quotes.type   = content.type" +
+            " AND (quotes.person IS NULL OR quotes.person = content.person)" +
+            " AND (quotes.tense IS NULL  OR quotes.tense  = content.tense)" +
         " ORDER BY RAND()" +
         " LIMIT 1"
 
-      println(query)
       val rs = connection.prepareStatement(query).executeQuery()
 
       rs.first()
