@@ -18,14 +18,14 @@ object QuoteContent {
     QuoteContent(
       rs.getInt("content_id"),
       rs.getString("content"),
-      ContentType.parse(rs.getString("type")),
-      parseO(rs.getString("person"), Person.parse),
-      parseO(rs.getString("tense"), Tense.parse)
+      ContentType.parse(rs.getInt("type")),
+      parseO(rs.getInt("person"), Person.parse),
+      parseO(rs.getInt("tense"), Tense.parse)
     )
   }
 
-  def parseO[T](name: String, parse: String => T): Option[T] = {
-    Option(name) match {
+  def parseO[T](id: Int, parse: Int => T): Option[T] = {
+    Option(id) match {
       case Some(value) => Some(parse(value))
       case None => None
     }
