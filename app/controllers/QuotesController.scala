@@ -11,10 +11,17 @@ class QuotesController @Inject()(cc: ControllerComponents, quoteDao: QuoteDao) e
 
   import scala.concurrent.ExecutionContext.Implicits.global
 
-  def getQuote() = Action.async { implicit request: Request[AnyContent] =>
+  def getRandomQuote() = Action.async { implicit request: Request[AnyContent] =>
     quoteDao.getRandomQuote.map {
       quote =>
         Ok(Json.toJson(quote.getfullQuote))
+    }
+  }
+
+  def getQuotes() = Action.async { implicit request: Request[AnyContent] =>
+    quoteDao.getAllQuotes.map {
+      quotes =>
+        Ok(Json.toJson(quotes.map(_.getfullQuote)))
     }
   }
 

@@ -4,7 +4,8 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET         /api/v1/quote            controllers.QuotesController.getQuote
+GET         /api/v1/quotes/random   controllers.QuotesController.getRandomQuote
+GET         /api/v1/quotes          controllers.QuotesController.getQuotes
 
 GET         /webjars/*file          controllers.Assets.at(path="/public", file)
 GET         /assets/*file           controllers.Assets.at(path="/public", file)

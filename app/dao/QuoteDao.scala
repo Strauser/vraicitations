@@ -1,8 +1,8 @@
 package dao
 
 import java.sql.ResultSet
-
 import javax.inject.{Inject, Singleton}
+
 import models.Quote
 import play.api.db._
 
@@ -39,8 +39,8 @@ class QuoteDao @Inject()(db: Database) {
             " FROM contents" +
           ") as content ON " +
             " quotes.type   = content.type" +
-            " AND (quotes.person IS NULL OR quotes.person = content.person)" +
-            " AND (quotes.tense IS NULL  OR quotes.tense  = content.tense)"
+            " AND (content.person IS NULL OR quotes.person IS NULL OR quotes.person = content.person)" +
+            " AND (content.tense  IS NULL OR quotes.tense  IS NULL OR quotes.tense  = content.tense)"
       ).executeQuery()
 
       rs.first()
