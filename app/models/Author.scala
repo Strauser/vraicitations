@@ -22,4 +22,11 @@ object Author {
     )
   }
 
+  def trueAuthorFromRow(rs: ResultSet): Author = {
+    Author(
+      rs.getInt("true_author_id"),
+      rs.getString("true_name")
+    )
+  }
+
 }

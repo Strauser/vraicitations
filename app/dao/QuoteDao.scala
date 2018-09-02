@@ -42,7 +42,6 @@ class QuoteDao @Inject()(db: Database) {
             " AND (content.person IS NULL OR quotes.person IS NULL OR quotes.person = content.person)" +
             " AND (content.tense  IS NULL OR quotes.tense  IS NULL OR quotes.tense  = content.tense)"
       ).executeQuery()
-
       rs.first()
       rowsToQuotes(rs)
     }
@@ -52,39 +51,46 @@ class QuoteDao @Inject()(db: Database) {
     connection => {
 
       val query = "SELECT" +
-          " quotes.quote_id," +
-          " quotes.quote," +
-          " quotes.type as quote_type," +
-          " quotes.person as quote_person," +
-          " quotes.tense as quote_tense," +
+          " quote.quote_id," +
+          " quote.quote," +
+          " quote.quote_type," +
+          " quote.quote_person," +
+          " quote.quote_tense," +
           " author.author_id," +
           " author.name," +
-          " content.content_id," +
-          " content.content," +
-          " content.type as content_type," +
-          " content.person as content_person," +
-          " content.tense as content_tense" +
-        " FROM quotes" +
+          " true_authors.name as true_name," +
+          " true_authors.author_id as true_author_id," +
+          " contents.content_id," +
+          " contents.content," +
+          " contents.type as content_type," +
+          " contents.person as content_person," +
+          " contents.tense as content_tense" +
+        " FROM contents" +
           " INNER JOIN (" +
-            " SELECT author_id," +
+            " SELECT" +
+              " author_id," +
               " name" +
             " FROM authors" +
             " ORDER BY RAND()" +
             " LIMIT 1" +
             ") as author" +
           " INNER JOIN (" +
-            " SELECT content_id," +
-              " content," +
-              " type," +
-              " person," +
-              " tense" +
-            " FROM contents" +
+            " SELECT" +
+              " quote_id," +
+              " quote," +
+              " type as quote_type," +
+              " person as quote_person," +
+              " tense as quote_tense," +
+              " true_author" +
+            " FROM quotes" +
             " ORDER BY RAND()" +
             " LIMIT 1" +
-          ") as content ON " +
-            " quotes.type   = content.type" +
-            " AND (quotes.person IS NULL OR quotes.person = content.person)" +
-            " AND (quotes.tense IS NULL  OR quotes.tense  = content.tense)" +
+          ") as quote" +
+            " ON quote.quote_type = contents.type" +
+            " AND (contents.person IS NULL OR quote.quote_person IS NULL OR quote.quote_person = contents.person)" +
+            " AND (contents.tense  IS NULL OR quote.quote_tense  IS NULL OR quote.quote_tense  = contents.tense)" +
+        " LEFT JOIN true_authors " +
+          " ON quote.true_author = true_authors.author_id" +
         " ORDER BY RAND()" +
         " LIMIT 1"
 

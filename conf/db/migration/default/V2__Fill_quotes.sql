@@ -9,6 +9,13 @@ INSERT INTO authors(name) VALUES ("Jean-Michel");
 INSERT INTO authors(name) VALUES ("Nabilla");
 INSERT INTO authors(name) VALUES ("Mamie");
 
+INSERT INTO true_authors(name) VALUES ("Jules Caesar");
+INSERT INTO true_authors(name) VALUES ("Jean de la Fontaine");
+INSERT INTO true_authors(name) VALUES ("Descartes");
+INSERT INTO true_authors(name) VALUES ("Platon");
+INSERT INTO true_authors(name) VALUES ("Confiscius");
+INSERT INTO true_authors(name) VALUES ("Jean-Jacques Rousseau");
+
 INSERT INTO contents(content, type, person, tense) VALUES ("dab", 4, 3, 1);
 INSERT INTO contents(content, type, person, tense) VALUES ("pue", 4, 3, 1);
 
@@ -74,30 +81,52 @@ INSERT INTO contents(content, type, person, tense) VALUES ("les frères Bogdanov
 INSERT INTO contents(content, type, person, tense) VALUES ("ta mère", 5, 3, NULL);
 INSERT INTO contents(content, type, person, tense) VALUES ("Jacques Chirac", 5, 3, NULL);
 
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Ta mère [...].", "Ta mère...", 4, 3, NULL);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Je suis venu, j'ai vu, [...].", "Je suis venu, j'ai vu, j'ai vaincu.", 1, 1, 4);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("La loi du plus fort est toujours [...].", "La loi du plus fort est toujours la meilleure.", 3, NULL, NULL);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Mieux vaut tard que [...].", "Mieux vaut tard que jamais.", 3, NULL, NULL);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Je pense donc [...].", "Je pense donc je suis.", 1, 1, 1);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("L'homme est un loup pour [...].", "L'homme est un loup pour l'homme.", 5, NULL, NULL);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Si tu n’es pas [...], tu dois vivre comme si tu voulais être [...].", "Si tu n’es pas Socrate, tu dois vivre comme si tu voulais être Socrate.", 5, NULL, NULL);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Choisissez un travail que vous aimez et vous n'aurez pas à [...] un seul jour de votre vie.", "Choisissez un travail que vous aimez et vous n'aurez pas à travailler un seul jour de votre vie.", 4, 5, 5);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Notre plus grande gloire n'est point de tomber, mais de [...].", "Notre plus grande gloire n'est point de tomber, mais de savoir nous relever chaque fois que nous tombons.", 4, 4, 5);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Je ne suis pas d’accord avec ce que vous dites, mais je me battrai jusqu’à la mort pour que [...].", "Je ne suis pas d’accord avec ce que vous dites, mais je me battrai jusqu’à la mort pour que vous ayez le droit de le dire.", 1, 4, 6);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Aimer, ce n'est pas se regarder l'un l'autre, c'est [...].", "Aimer, ce n'est pas se regarder l'un l'autre, c'est regarder ensemble dans la même direction.", 4, 3, 5);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Le secret ça n'est pas de faire ce que l'on aime, mais de [...].", "Le secret ça n'est pas de faire ce que l'on aime, mais d'aimer ce que l'on fait.", 4, 3, 5);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Il faut souffrir pour [...].", "Il faut souffrir pour être belle.", 4, 3, 5);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Il faut [...] pour être belle.", "Il faut souffrir pour être belle.", 4, 3, 5);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Je ne cherche pas à connaître les réponses, je cherche à [...].", "Je ne cherche pas à connaître les réponses, je cherche à comprendre les questions.", 4, 1, 5);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Qui va à la chasse [...].", "Qui va à la chasse perd sa place.", 6, 3, 1);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("L'avenir appartient à ceux qui [...] !", "L'avenir appartient à ceux qui se lèvent tôt !", 6, 6, 1);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Ce qui ne te tue pas [...].", "Ce qui ne te tue pas te rend plus fort.", 6, 2, 1);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Qui vivra, [...].", "Qui vivra, verra.", 4, 3, 3);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Quand le chat n'est pas là, [...].", "Quand le chat n'est pas là, les souris dansent.", 1, NULL, 1);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Je pouvais pas, [...].", "Je pouvais pas...", 1, NULL, 2);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Comme le dirait [...], \"On s'en bat les couilles\"", "Comme le dirait Farid, \"On s'en bat les couilles\"", 5, 3, NULL);
-INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Quand l'apétit va [...]", "Quand l'apétit va tout va", 1, NULL, 1);
---INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Tout ce qui est petit est mignon.", "Tout ce qui est petit est mignon.", 1, NULL, 1);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Ta mère [...].", "Ta mère...", 4, 3, NULL, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Je suis venu, j'ai vu, [...].", "Je suis venu, j'ai vu, j'ai vaincu.", 1, 1, 4, 1);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("La loi du plus fort est toujours [...].", "La loi du plus fort est toujours la meilleure.", 3, NULL, NULL, 2);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Mieux vaut tard que [...].", "Mieux vaut tard que jamais.", 3, NULL, NULL, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Je pense donc [...].", "Je pense donc je suis.", 1, 1, 1, 3);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("L'homme est un loup pour [...].", "L'homme est un loup pour l'homme.", 5, NULL, NULL, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Si tu n’es pas [...], tu dois vivre comme si tu voulais être [...].", "Si tu n’es pas Socrate, tu dois vivre comme si tu voulais être Socrate.", 5, NULL, NULL, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Choisissez un travail que vous aimez et vous n'aurez pas à [...] un seul jour de votre vie.", "Choisissez un travail que vous aimez et vous n'aurez pas à travailler un seul jour de votre vie.", 4, 5, 5, 5);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Notre plus grande gloire n'est point de tomber, mais de [...].", "Notre plus grande gloire n'est point de tomber, mais de savoir nous relever chaque fois que nous tombons.", 4, 4, 5, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Je ne suis pas d’accord avec ce que vous dites, mais je me battrai jusqu’à la mort pour que [...].", "Je ne suis pas d’accord avec ce que vous dites, mais je me battrai jusqu’à la mort pour que vous ayez le droit de le dire.", 1, 4, 6, 6);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Aimer, ce n'est pas se regarder l'un l'autre, c'est [...].", "Aimer, ce n'est pas se regarder l'un l'autre, c'est regarder ensemble dans la même direction.", 4, 3, 5, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Le secret ça n'est pas de faire ce que l'on aime, mais de [...].", "Le secret ça n'est pas de faire ce que l'on aime, mais d'aimer ce que l'on fait.", 4, 3, 5, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Il faut souffrir pour [...].", "Il faut souffrir pour être belle.", 4, 3, 5, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Il faut [...] pour être belle.", "Il faut souffrir pour être belle.", 4, 3, 5, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Je ne cherche pas à connaître les réponses, je cherche à [...].", "Je ne cherche pas à connaître les réponses, je cherche à comprendre les questions.", 4, 1, 5, 5);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Qui va à la chasse [...].", "Qui va à la chasse perd sa place.", 6, 3, 1, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("L'avenir appartient à ceux qui [...] !", "L'avenir appartient à ceux qui se lèvent tôt !", 6, 6, 1, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Ce qui ne te tue pas [...].", "Ce qui ne te tue pas te rend plus fort.", 6, 2, 1, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Qui vivra, [...].", "Qui vivra, verra.", 4, 3, 3, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Quand le chat n'est pas là, [...].", "Quand le chat n'est pas là, les souris dansent.", 1, NULL, 1, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Je pouvais pas, [...].", "Je pouvais pas...", 1, NULL, 2, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Comme le dirait [...], \"On s'en bat les couilles\"", "Comme le dirait Farid, \"On s'en bat les couilles\"", 5, 3, NULL, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Quand l'apétit va [...]", "Quand l'apétit va tout va", 1, NULL, 1, NULL);
 
 
 --"Mange ta main et garde l'autre pour demain"
@@ -114,3 +143,15 @@ INSERT INTO quotes(quote, truequote, type, person, tense) VALUES ("Quand l'apét
 --"Tu t'es vu quand t'as bu ?"
 --"Si ce n'est toi c'est donc ton frère"
 --"Les chiens ne font pas des chats"
+--"Résiste ! Prouve que tu existe !"
+--"Excité comme une puce."
+--"Se la couler douce."
+--"Être beau comme un camion."
+--"Donner sa langue au chat."
+--"S'en mordre les doigts."
+--"Tout vient à point à qui sait attendre."
+--"Rien ne sert de courir, il faut partir à temps."
+--"Boire ou conduire, il faut choisir."
+--"A plus dans l'bus."
+--"A bientôt dans l'métro."
+--"Tout ce qui est petit est mignon."

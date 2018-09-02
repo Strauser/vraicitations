@@ -12,7 +12,8 @@ case class Quote(
   contentType: ContentType,
   person: Option[Person] = None,
   tense: Option[Tense] = None,
-  author: Author
+  author: Author,
+  true_author: Option[Author]
 ) {
 
   def getfullQuote: Quote =
@@ -23,7 +24,8 @@ case class Quote(
       contentType,
       person,
       tense,
-      author
+      author,
+      true_author
   )
 
 }
@@ -43,7 +45,8 @@ object Quote {
       ContentType.parse(rs.getInt("quote_type")),
       ParseUtils.parseO[Person](rs.getInt("quote_person"), Person.parse),
       ParseUtils.parseO[Tense](rs.getInt("quote_tense"), Tense.parse),
-      Author.fromRow(rs)
+      Author.fromRow(rs),
+      if(rs.getInt("true_author_id") > 0) Some(Author.trueAuthorFromRow(rs)) else None
     )
   }
 
