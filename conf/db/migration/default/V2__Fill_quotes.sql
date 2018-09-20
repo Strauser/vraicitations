@@ -16,30 +16,13 @@ INSERT INTO true_authors(name) VALUES ("Platon");
 INSERT INTO true_authors(name) VALUES ("Confiscius");
 INSERT INTO true_authors(name) VALUES ("Jean-Jacques Rousseau");
 
-INSERT INTO contents(content, type, person, tense) VALUES ("dab", 4, 3, 1);
-INSERT INTO contents(content, type, person, tense) VALUES ("pue", 4, 3, 1);
-
-INSERT INTO contents(content, type, person, tense) VALUES ("dabait", 4, 3, 2);
-INSERT INTO contents(content, type, person, tense) VALUES ("dabera", 4, 3, 3);
-INSERT INTO contents(content, type, person, tense) VALUES ("a dabé", 4, 3, 4);
-
-INSERT INTO contents(content, type, person, tense) VALUES ("daber", 4, NULL, 5);
-INSERT INTO contents(content, type, person, tense) VALUES ("puer", 4, NULL, 5);
-INSERT INTO contents(content, type, person, tense) VALUES ("parler avec des plantes", 4, NULL, 5);
-INSERT INTO contents(content, type, person, tense) VALUES ("se masturber", 4, NULL, 5);
-INSERT INTO contents(content, type, person, tense) VALUES ("boire jusqu'au comas éthylique", 4, NULL, 5);
-INSERT INTO contents(content, type, person, tense) VALUES ("se remonter discrètement les boules", 4, 3, 5);
-INSERT INTO contents(content, type, person, tense) VALUES ("vous remonter discrètement les boules", 4, 5, 5);
-INSERT INTO contents(content, type, person, tense) VALUES ("nous remonter discrètement les boules", 4, 5, 5);
-INSERT INTO contents(content, type, person, tense) VALUES ("faire du poney", 4, NULL, 5);
-
 INSERT INTO contents(content, type, person, tense) VALUES ("je dab", 1, 1, 1);
 INSERT INTO contents(content, type, person, tense) VALUES ("je vole des vêtements dans les points relais", 1, 1, 1);
 INSERT INTO contents(content, type, person, tense) VALUES ("j'écoute le dernier single de Laurie", 1, 1, 1);
 INSERT INTO contents(content, type, person, tense) VALUES ("je teste la chute sans parachute", 1, 1, 1);
 INSERT INTO contents(content, type, person, tense) VALUES ("je meurs instantanément", 1, 1, 1);
 INSERT INTO contents(content, type, person, tense) VALUES ("je t'invite à insérer ton opinion dans ton cul", 1, 1, 1);
-INSERT INTO contents(content, type, person, tense) VALUES ("j'enfile des perles", 1, 1, 1);
+INSERT INTO contents(content, type, person, tense) VALUES ("j'enffile des perles", 1, 1, 1);
 
 INSERT INTO contents(content, type, person, tense) VALUES ("j'avais poney", 1, 1, 2);
 INSERT INTO contents(content, type, person, tense) VALUES ("je matais un film de cul", 1, 1, 2);
@@ -58,31 +41,66 @@ INSERT INTO contents(content, type, person, tense) VALUES ("vous soyez envoyé e
 INSERT INTO contents(content, type, person, tense) VALUES ("vous la fermiez", 1, 4, 6);
 INSERT INTO contents(content, type, person, tense) VALUES ("vous deveniez le meilleur dresseur de pokemon", 1, 4, 6);
 INSERT INTO contents(content, type, person, tense) VALUES ("vous puissiez gagner une entrée gratuite à l'année à la piscine", 1, 4, 6);
+INSERT INTO contents(content, type, person, tense) VALUES ("vous n'ayez plus à payer l'ISF", 1, 4, 6);
 
-INSERT INTO contents(content, type, person, tense) VALUES ("se masse les couilles", 6, 3, 1);
-INSERT INTO contents(content, type, person, tense) VALUES ("se met en PLS", 6, 3, 1);
-INSERT INTO contents(content, type, person, tense) VALUES ("se chatouille le trou de balle", 6, 3, 1);
-
-INSERT INTO contents(content, type, person, tense) VALUES ("te masse les couilles", 6, 2, 1);
-INSERT INTO contents(content, type, person, tense) VALUES ("te met en PLS", 6, 2, 1);
-INSERT INTO contents(content, type, person, tense) VALUES ("te chatouille le trou de balle", 6, 2, 1);
-
-INSERT INTO contents(content, type, person, tense) VALUES ("se massent les couilles", 6, 6, 1);
-INSERT INTO contents(content, type, person, tense) VALUES ("se mettent en PLS", 6, 6, 1);
-INSERT INTO contents(content, type, person, tense) VALUES ("se chatouillent le trou de balle", 6, 3, 1);
 
 INSERT INTO contents(content, type, person, tense) VALUES ("dans ton cul", 3, NULL, NULL);
 INSERT INTO contents(content, type, person, tense) VALUES ("à la piscine", 3, NULL, NULL);
 INSERT INTO contents(content, type, person, tense) VALUES ("ailleurs", 3, NULL, NULL);
 INSERT INTO contents(content, type, person, tense) VALUES ("dans ta gueule", 3, NULL, NULL);
 INSERT INTO contents(content, type, person, tense) VALUES ("chez mémé", 3, NULL, NULL);
+INSERT INTO contents(content, type, person, tense) VALUES ("en réunion avec des sozies des stars de télé réalité", 3, NULL, NULL);
+INSERT INTO contents(content, type, person, tense) VALUES ("derrière vous", 3, NULL, NULL);
+INSERT INTO contents(content, type, person, tense) VALUES ("en voie de disparition", 3, NULL, NULL);
+INSERT INTO contents(content, type, person, tense) VALUES ("considéré que le réchauffement climatique", 3, NULL, NULL);
+INSERT INTO contents(content, type, person, tense) VALUES ("OKLM", 3, NULL, NULL);
+
+
+INSERT INTO contents(content, type, person, tense) VALUES ("daber", 4, NULL, 5);
+INSERT INTO contents(content, type, person, tense) VALUES ("puer", 4, NULL, 5);
+INSERT INTO contents(content, type, person, tense) VALUES ("parler avec des plantes", 4, NULL, 5);
+INSERT INTO contents(content, type, person, tense) VALUES ("boire jusqu'au coma éthylique", 4, NULL, 5);
+INSERT INTO contents(content, type, person, tense) VALUES ("faire du poney", 4, NULL, 5);
+INSERT INTO contents(content, type, person, tense) VALUES ("insister pour le sacrifice en masse des célébrité de télé réalité au prochain G20", 4, NULL, 5);
+INSERT INTO contents(content, type, person, tense) VALUES ("inviter Chantal Goya à faire un concert à la maison pour l'anniversaire de son fils de 16 ans", 4, NULL, 5);
+INSERT INTO contents(content, type, person, tense) VALUES ("prendre une leçon de patinage artistique", 4, NULL, 5);
+INSERT INTO contents(content, type, person, tense) VALUES ("apprendre à siffler du nez", 4, NULL, 5);
+INSERT INTO contents(content, type, person, tense) VALUES ("enfiler des perles", 4, NULL, 5);
+
+INSERT INTO contents(content, type, person, tense) VALUES ("dab", 4, 3, 1);
+INSERT INTO contents(content, type, person, tense) VALUES ("pue", 4, 3, 1);
+
+INSERT INTO contents(content, type, person, tense) VALUES ("a dabé", 4, 3, 4);
+
+INSERT INTO contents(content, type, person, tense) VALUES ("se remonter discrètement les boules", 4, 3, 5);
+INSERT INTO contents(content, type, person, tense) VALUES ("se masturber", 4, 3, 5);
+INSERT INTO contents(content, type, person, tense) VALUES ("vous remonter discrètement les boules", 4, 5, 5);
+INSERT INTO contents(content, type, person, tense) VALUES ("nous remonter discrètement les boules", 4, 4, 5);
+
+INSERT INTO contents(content, type, person, tense) VALUES ("te masse les couilles", 4, 2, 1);
+INSERT INTO contents(content, type, person, tense) VALUES ("te met en PLS", 4, 2, 1);
+INSERT INTO contents(content, type, person, tense) VALUES ("te chatouille le trou de balle", 4, 2, 1);
+
+INSERT INTO contents(content, type, person, tense) VALUES ("se masse les couilles", 4, 3, 1);
+INSERT INTO contents(content, type, person, tense) VALUES ("se met en PLS", 4, 3, 1);
+INSERT INTO contents(content, type, person, tense) VALUES ("se chatouille le trou de balle", 4, 3, 1);
+
+INSERT INTO contents(content, type, person, tense) VALUES ("se massent les couilles", 4, 6, 1);
+INSERT INTO contents(content, type, person, tense) VALUES ("se mettent en PLS", 4, 6, 1);
+INSERT INTO contents(content, type, person, tense) VALUES ("se chatouillent le trou de balle", 4, 6, 1);
+INSERT INTO contents(content, type, person, tense) VALUES ("parlent aux plantes", 4, 6, 1);
+INSERT INTO contents(content, type, person, tense) VALUES ("dabent", 4, 6, 1);
+INSERT INTO contents(content, type, person, tense) VALUES ("puent", 4, 6, 1);
+INSERT INTO contents(content, type, person, tense) VALUES ("gerbent", 4, 6, 1);
+
 
 INSERT INTO contents(content, type, person, tense) VALUES ("les frères Bogdanov", 5, 6, NULL);
 INSERT INTO contents(content, type, person, tense) VALUES ("ta mère", 5, 3, NULL);
 INSERT INTO contents(content, type, person, tense) VALUES ("Jacques Chirac", 5, 3, NULL);
+INSERT INTO contents(content, type, person, tense) VALUES ("la mer noire", 5, 3, NULL);
 
 INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
-    VALUES ("Ta mère [...].", "Ta mère...", 4, 3, NULL, NULL);
+    VALUES ("Ta mère [...].", "Ta mère...", 4, 3, 1, NULL);
 INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
     VALUES ("Je suis venu, j'ai vu, [...].", "Je suis venu, j'ai vu, j'ai vaincu.", 1, 1, 4, 1);
 INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
@@ -112,21 +130,33 @@ INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
 INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
     VALUES ("Je ne cherche pas à connaître les réponses, je cherche à [...].", "Je ne cherche pas à connaître les réponses, je cherche à comprendre les questions.", 4, 1, 5, 5);
 INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
-    VALUES ("Qui va à la chasse [...].", "Qui va à la chasse perd sa place.", 6, 3, 1, NULL);
+    VALUES ("Qui va à la chasse [...].", "Qui va à la chasse perd sa place.", 4, 3, 1, NULL);
 INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
-    VALUES ("L'avenir appartient à ceux qui [...] !", "L'avenir appartient à ceux qui se lèvent tôt !", 6, 6, 1, NULL);
+    VALUES ("L'avenir appartient à ceux qui [...] !", "L'avenir appartient à ceux qui se lèvent tôt !", 4, 6, 1, NULL);
 INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
-    VALUES ("Ce qui ne te tue pas [...].", "Ce qui ne te tue pas te rend plus fort.", 6, 2, 1, NULL);
+    VALUES ("Ce qui ne te tue pas [...].", "Ce qui ne te tue pas te rend plus fort.", 4, 2, 1, NULL);
 INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
     VALUES ("Qui vivra, [...].", "Qui vivra, verra.", 4, 3, 3, NULL);
 INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
     VALUES ("Quand le chat n'est pas là, [...].", "Quand le chat n'est pas là, les souris dansent.", 1, NULL, 1, NULL);
 INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
     VALUES ("Je pouvais pas, [...].", "Je pouvais pas...", 1, NULL, 2, NULL);
+--INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+--    VALUES ("Comme le dirait [...], \"On s'en bat les couilles\"", "Comme le dirait Farid, \"On s'en bat les couilles\"", 5, 3, NULL, NULL);
 INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
-    VALUES ("Comme le dirait [...], \"On s'en bat les couilles\"", "Comme le dirait Farid, \"On s'en bat les couilles\"", 5, 3, NULL, NULL);
+    VALUES ("Quand l'apétit va [...].", "Quand l'apétit va tout va.", 1, NULL, 1, NULL);
 INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
-    VALUES ("Quand l'apétit va [...]", "Quand l'apétit va tout va", 1, NULL, 1, NULL);
+    VALUES ("Qui sème le vent, [...].", "Qui sème le vent, récolte la tempête.", 4, 3, 1, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Tout vient à point à qui sait [...].", "Tout vient à point à qui sait attendre.", 4, 3, 5, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Rien ne sert de courir, il faut [...].", "Rien ne sert de courir, il faut partir à temps.", 4, 3, 5, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Boire ou conduire, il faut [...].", "Boire ou conduire, il faut choisir.", 4, 3, 5, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("Boire ou [...], il faut choisir.", "Boire ou conduire, il faut choisir.", 4, 3, 5, NULL);
+INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
+    VALUES ("[...] ou conduire, il faut choisir.", "Boire ou conduire, il faut choisir.", 4, 3, 5, NULL);
 
 
 --"Mange ta main et garde l'autre pour demain"
@@ -139,7 +169,6 @@ INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
 --"Qui s'endort avec le cul qui gratte, se réveille avec le doigt qui pue"
 --"Croustibat, qui peut te battre"
 --"Les produits laitiers, des sensations pures"
---"Qui sème le vent, récolte la tempete"
 --"Tu t'es vu quand t'as bu ?"
 --"Si ce n'est toi c'est donc ton frère"
 --"Les chiens ne font pas des chats"
@@ -149,9 +178,6 @@ INSERT INTO quotes(quote, truequote, type, person, tense, true_author)
 --"Être beau comme un camion."
 --"Donner sa langue au chat."
 --"S'en mordre les doigts."
---"Tout vient à point à qui sait attendre."
---"Rien ne sert de courir, il faut partir à temps."
---"Boire ou conduire, il faut choisir."
 --"A plus dans l'bus."
 --"A bientôt dans l'métro."
 --"Tout ce qui est petit est mignon."

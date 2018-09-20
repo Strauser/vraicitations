@@ -4,16 +4,17 @@
 <head>
     <link rel="stylesheet" href="/webjars/lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/index.css">
-    
+
     <script src="/webjars/lib/vue/vue.min.js"></script>
 </head>
 
 <body>
 
     <blockquote class="blockquote row">
-        <div class="col-sm-4"></div>
-        <div id="app" class="col-sm-4">
-            <h1 class="text-center">"{{ quote.quote }}"</h1>
+        <div class="col-sm-2"></div>
+        <div id="app" class="col-sm-8">
+            <h1 class="open-quote">"</h1>
+            <h1 class="quote-content">{{ quote.quote }}"</h1>
             <footer class="blockquote-footer text-right">{{ quote.author.name }}</footer>
         </div>
     </blockquote>

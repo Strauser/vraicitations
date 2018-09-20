@@ -1,7 +1,33 @@
+@font-face {
+  font-family: "AlexBrush";
+  src: url("/font/AlexBrush-Regular.ttf");
+}
+
+
 body {
-  background-color: black;
+  background-color: #121212;
+}
+
+blockquote {
+  margin-top: 30px;
 }
 
 h1 {
   color: white;
+  font-family: "AlexBrush", "cursive";
+  font-size: 66px;
+}
+
+.quote-content {
+  margin-left: 34px;
+}
+
+.open-quote {
+  font-size: 174px;
+  margin-bottom: -143px;
+}
+
+.blockquote-footer {
+  font-size: 25px;
+  font-family: cursive;
 }
